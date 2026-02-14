@@ -1,13 +1,17 @@
 export type CountryAdapter = {
   getCountryList(): Promise<Country[]>;
+  getCountryByName(name: string): Promise<Country[]>;
 };
 
 export type Country = {
   name: Name;
   flags: Flag;
   region: string;
+  subregion: string;
+  population: number;
+  currencies: Record<string, Currency>;
   capital: string[];
-  languages: string[];
+  languages: Record<string, string>;
   translations: Translations;
 };
 
@@ -25,6 +29,11 @@ export type Flag = {
   png: string;
   svg: string;
   alt: string;
+};
+
+export type Currency = {
+  name: string;
+  symbol: string;
 };
 
 export type Translations = {
