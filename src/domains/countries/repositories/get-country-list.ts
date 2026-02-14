@@ -15,11 +15,26 @@ export const getCountryList = async (params: SearchParams = {}) => {
     next = next.filter((item) => {
       const isCommonName = item.name.common.toLowerCase().includes(search.toLowerCase());
       const isOfficialName = item.name.official.toLowerCase().includes(search.toLowerCase());
+
       const isCapitalName = item.capital.some((capital) =>
         capital.toLowerCase().includes(search.toLowerCase()),
       );
 
-      return isCommonName || isOfficialName || isCapitalName;
+      const isLocationCommonName = item.translations.por.common
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      const isLocationOfficialName = item.translations.por.official
+        .toLowerCase()
+        .includes(search.toLowerCase());
+
+      return (
+        isCommonName ||
+        isOfficialName ||
+        isCapitalName ||
+        isLocationCommonName ||
+        isLocationOfficialName
+      );
     });
   }
 
