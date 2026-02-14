@@ -1,4 +1,4 @@
-import type { CountryAdapter } from '../entities';
+import type { Country, CountryAdapter } from '../entities';
 import { CountryListSchema } from '../schemas';
 
 export const createCountryAdapter = (): CountryAdapter => {
@@ -9,7 +9,7 @@ export const createCountryAdapter = (): CountryAdapter => {
     );
 
     const payload = await response.json();
-    return CountryListSchema.parse(payload);
+    return CountryListSchema.parse(payload) as Country[];
   };
 
   const getCountryByName = async (name: string) => {
@@ -19,7 +19,7 @@ export const createCountryAdapter = (): CountryAdapter => {
     });
 
     const payload = await response.json();
-    return CountryListSchema.parse(payload);
+    return CountryListSchema.parse(payload) as Country[];
   };
 
   return {

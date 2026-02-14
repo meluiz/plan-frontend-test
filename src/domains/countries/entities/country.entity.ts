@@ -9,8 +9,8 @@ export type Country = {
   region: string;
   subregion: string;
   population: number;
-  currencies: Record<string, Currency>;
   capital: string[];
+  currencies?: Record<string, Currency>;
   languages: Record<string, string>;
   translations: Translations;
 };

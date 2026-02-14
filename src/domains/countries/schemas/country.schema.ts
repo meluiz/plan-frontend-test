@@ -8,7 +8,6 @@ export const CountryNativeNameSchema = z.object({
 export const CountryNameSchema = z.object({
   common: z.string(),
   official: z.string(),
-  // nativeName: CountryNativeNameSchema,
 });
 
 export const CountryFlagSchema = z.object({
@@ -24,11 +23,11 @@ export const CountryCurrencySchema = z.object({ name: z.string(), symbol: z.stri
 export const CountrySchema = z.object({
   name: CountryNameSchema,
   flags: CountryFlagSchema,
-  region: z.string(),
-  subregion: z.string(),
   population: z.number(),
-  currencies: z.record(z.string(), CountryCurrencySchema),
-  capital: z.array(z.string()),
+  region: z.string().default('Desconhecido'),
+  subregion: z.string().default('Desconhecido'),
+  currencies: z.record(z.string(), CountryCurrencySchema).optional(),
+  capital: z.array(z.string()).default(['Desconhecido']),
   languages: z.record(z.string(), z.string()),
   translations: CountryTranslationsSchema,
 });

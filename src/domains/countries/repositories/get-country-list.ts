@@ -1,56 +1,65 @@
 import type { SearchParams } from '@/utils/helpers';
 
 import { createCountryAdapter } from '../adapters';
+import type { Country } from '../entities';
+
+const isAntarctica = (country: Country): boolean => {
+  const antarcticaKeyword = 'antarctica';
+
+  return (
+    country.name.common.toLowerCase().includes(antarcticaKeyword) ||
+    country.subregion?.toLowerCase().includes(antarcticaKeyword)
+  );
+};
+
+const filterSearch = (country: Country, search: string): boolean => {
+  const searchLower = search.toLowerCase();
+
+  return (
+    country.name.common.toLowerCase().includes(searchLower) ||
+    country.name.official.toLowerCase().includes(searchLower) ||
+    country.capital?.some((capital: string) => capital.toLowerCase().includes(searchLower)) ||
+    country.translations.por.common.toLowerCase().includes(searchLower) ||
+    country.translations.por.official.toLowerCase().includes(searchLower)
+  );
+};
+
+const filterLanguage = (country: Country, lang: string): boolean => {
+  const langLower = lang.toLowerCase();
+
+  return Object.values(country.languages || {}).some(
+    (language) => language.toLowerCase() === langLower,
+  );
+};
+
+const filterRegion = (country: Country, regions: string[]): boolean => {
+  const regionsLower = regions.map((region) => region.toLowerCase());
+  return regionsLower.includes(country.region.toLowerCase());
+};
 
 export const getCountryList = async (params: SearchParams = {}) => {
   const { search, lang, regions } = params;
 
   const { getCountryList } = createCountryAdapter();
-
   const list = await getCountryList();
 
-  let next = Array.from(list);
+  return list.filter((item) => {
+    if (isAntarctica(item)) {
+      return false;
+    }
 
-  if (search) {
-    next = next.filter((item) => {
-      const isCommonName = item.name.common.toLowerCase().includes(search.toLowerCase());
-      const isOfficialName = item.name.official.toLowerCase().includes(search.toLowerCase());
+    if (search && !filterSearch(item, search)) {
+      return false;
+    }
 
-      const isCapitalName = item.capital.some((capital) =>
-        capital.toLowerCase().includes(search.toLowerCase()),
-      );
+    if (lang && lang !== 'all' && !filterLanguage(item, lang)) {
+      return false;
+    }
 
-      const isLocationCommonName = item.translations.por.common
-        .toLowerCase()
-        .includes(search.toLowerCase());
+    if (regions && regions.length > 0 && !filterRegion(item, regions)) {
+      return false;
+    }
 
-      const isLocationOfficialName = item.translations.por.official
-        .toLowerCase()
-        .includes(search.toLowerCase());
-
-      return (
-        isCommonName ||
-        isOfficialName ||
-        isCapitalName ||
-        isLocationCommonName ||
-        isLocationOfficialName
-      );
-    });
-  }
-
-  if (lang && lang !== 'all') {
-    next = next.filter((item) =>
-      Object.values(item.languages).some(
-        (language) => language.toLowerCase() === lang.toLowerCase(),
-      ),
-    );
-  }
-
-  if (regions) {
-    next = next.filter((item) =>
-      regions.map((region) => region.toLowerCase()).includes(item.region.toLowerCase()),
-    );
-  }
-
-  return next;
+    return true;
+  });
 };
