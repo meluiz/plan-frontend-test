@@ -1,0 +1,61 @@
+import { StarIcon } from 'lucide-react';
+import Image from 'next/image';
+import slugify from 'slugify';
+
+import { CountryCard } from '@/components/layout';
+import type { Country } from '@/domains/countries';
+import { Button } from '@/components/ui';
+
+export type CountryListProps = {
+  collection: Country[];
+};
+
+export const CountryList = async (props: CountryListProps) => {
+  const { collection } = props;
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+      {collection.map((country) => {
+        const key = slugify(country.name.common, {
+          lower: true,
+          strict: true,
+        });
+
+        return (
+          <CountryCard key={`country:${key}`} region={country.region.toLowerCase()}>
+            <div className="flex flex-col gap-y-5.5">
+              <div className="flex flex-col gap-y-2.5">
+                <div className="flex items-center justify-center">
+                  <Image
+                    src={country.flags.png}
+                    className="w-5 h-4.5 object-contain object-center"
+                    draggable={false}
+                    width={20}
+                    height={18}
+                    alt={country.flags.alt}
+                  />
+                </div>
+                <div className="flex flex-col items-center justify-center gap-2">
+                  <h2 className="text-xl font-bold text-gray-dark text-center">
+                    {country.name.common}
+                  </h2>
+                  <div className="flex items-center gap-x-2.5">
+                    <div className="size-5 flex items-center justify-center rounded-full bg-accent text-white">
+                      <StarIcon strokeWidth={3} size={14} />
+                    </div>
+                    <p className="text-lg font-bold text-gray-dark">
+                      {country.capital.join(', ')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <Button.Root className="w-full">
+                <Button.Label>Ver mais</Button.Label>
+              </Button.Root>
+            </div>
+          </CountryCard>
+        );
+      })}
+    </div>
+  );
+};
