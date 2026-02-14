@@ -36,7 +36,6 @@ export const getCountryList = async (params: SearchParams = {}) => {
       regions.map((region) => region.toLowerCase()).includes(item.region.toLowerCase()),
     );
   }
-  console.log('after:search', next.length);
 
   return next;
 };
