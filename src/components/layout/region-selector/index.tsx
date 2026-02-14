@@ -16,12 +16,14 @@ export const RegionSelector = (props: RegionSelectorProps) => {
       { value: 'europe', label: 'Europa' },
       { value: 'oceania', label: 'Oceânia' },
       { value: 'americas', label: 'Américas' },
-      { value: 'antarctic', label: 'Antártica' },
     ],
   });
 
   return (
-    <Checkbox.Group className="flex flex-wrap items-center gap-y-2.5 gap-x-10" {...props}>
+    <Checkbox.Group
+      className="flex flex-wrap items-center justify-center gap-y-2.5 gap-x-10"
+      {...props}
+    >
       {collection.items.map((item) => (
         <Checkbox.Root
           key={`region-selector:${item.value}`}
