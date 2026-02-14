@@ -1,4 +1,5 @@
 'use client';
+
 import { Field } from '@ark-ui/react';
 import { usePathname, useSearchParams } from 'next/navigation';
 
@@ -43,7 +44,9 @@ const FiltersPure = (props: FiltersProps) => {
           <div className="col-span-8 md:col-span-4">
             <LanguageSelector
               defaultValue={[filters.lang ?? '']}
-              onSelect={({ value }) => handleFilterChange('lang', value)}
+              onSelect={({ value }) =>
+                handleFilterChange('lang', value === 'all' ? undefined : value)
+              }
             />
           </div>
         </div>
