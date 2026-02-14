@@ -21,6 +21,7 @@ export const CountryPaginationPure = (props: CountryPaginationPureProps) => {
 
   const pagination = usePagination({
     type: 'link',
+    pageSize: 8,
     page: passthrough.page || 1,
     siblingCount: 2,
     count: totalItems,
