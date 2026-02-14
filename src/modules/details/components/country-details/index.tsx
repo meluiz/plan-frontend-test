@@ -5,6 +5,10 @@ import type { Country } from '@/domains/countries';
 const NUMBER_FORMATTER = new Intl.NumberFormat('pt-BR');
 
 const formatCurrencies = (country: Country): string => {
+  if (!country.currencies) {
+    return 'Sem moeda';
+  }
+
   const currencies = Object.values(country.currencies).map((currency) =>
     toCapitalCase(currency.name),
   );
@@ -52,7 +56,7 @@ const getCountryInfo = (country: Country) => {
     {
       id: 'subregion',
       label: 'Sub-Região:',
-      value: country.subregion,
+      value: country?.subregion,
     },
   ];
 };
