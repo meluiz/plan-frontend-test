@@ -1,0 +1,28 @@
+import { ark, type HTMLArkProps } from '@ark-ui/react';
+import type { VariantProps } from 'tailwind-variants';
+
+import { label, root } from './button.styles';
+
+/* --------------------------------------------------------------------------------
+ * Button - Root
+ * -------------------------------------------------------------------------------- */
+
+export type RootProps = RootBaseProps & HTMLArkProps<'button'>;
+export type RootBaseProps = VariantProps<typeof root>;
+
+export const Root = (props: RootProps) => {
+  const { className, ...rest } = props;
+  return <ark.button className={root({ className })} {...rest} />;
+};
+
+/* --------------------------------------------------------------------------------
+ * Button - Label
+ * -------------------------------------------------------------------------------- */
+
+export type LabelProps = LabelBaseProps & HTMLArkProps<'span'>;
+export type LabelBaseProps = VariantProps<typeof label>;
+
+export const Label = (props: LabelProps) => {
+  const { className, ...rest } = props;
+  return <ark.span className={label({ className })} {...rest} />;
+};
