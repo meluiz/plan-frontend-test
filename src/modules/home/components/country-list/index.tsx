@@ -3,8 +3,8 @@ import Image from 'next/image';
 import slugify from 'slugify';
 
 import { CountryCard } from '@/components/layout';
-import type { Country } from '@/domains/countries';
 import { Button } from '@/components/ui';
+import type { Country } from '@/domains/countries';
 
 export type CountryListProps = {
   collection: Country[];
