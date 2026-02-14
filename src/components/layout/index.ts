@@ -1,2 +1,4 @@
 export * from './grupo-plan-mark';
+export * from './language-selector';
 export * from './plan-mark';
+export * from './region-selector';
