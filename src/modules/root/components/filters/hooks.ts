@@ -26,7 +26,7 @@ export const useFilters = (props: FiltersProps) => {
     value: string | string[] | undefined,
   ) => {
     startTransition(() => {
-      const next = { ...filters, [key]: value };
+      const next = { ...filters, page: 1, [key]: value };
 
       update(next);
       setFilters(next);
