@@ -1,5 +1,5 @@
-export type * from './entities';
+export type * from './entities'
 
-export * from './adapters';
-export * from './repositories';
-export * from './schemas';
+export * from './adapters'
+export * from './repositories'
+export * from './schemas'

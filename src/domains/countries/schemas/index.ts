@@ -1,1 +1,1 @@
-export * from './country.schema';
+export * from './country.schema'

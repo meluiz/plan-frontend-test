@@ -1,2 +1,2 @@
-export * from './country-flag';
-export * from './country-details';
+export * from './country-flag'
+export * from './country-details'

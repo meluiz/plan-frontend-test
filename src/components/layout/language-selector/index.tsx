@@ -1,14 +1,14 @@
-import { createListCollection, Select } from '@ark-ui/react';
-import { ChevronDown } from 'lucide-react';
+import { createListCollection, Select } from '@ark-ui/react'
+import { ChevronDown } from 'lucide-react'
 
 export type LanguageSelectorProps = {
-  value?: string[] | undefined;
-  defaultValue?: string[] | undefined;
-  onSelect?: ((details: SelectionDetails) => void) | undefined;
-};
+  value?: string[] | undefined
+  defaultValue?: string[] | undefined
+  onSelect?: ((details: SelectionDetails) => void) | undefined
+}
 
 interface SelectionDetails {
-  value: string;
+  value: string
 }
 
 export const LanguageSelector = (props: LanguageSelectorProps) => {
@@ -26,7 +26,7 @@ export const LanguageSelector = (props: LanguageSelectorProps) => {
       { id: '9', value: 'japanese', label: 'Japanese' },
       { id: '10', value: 'korean', label: 'Korean' },
     ],
-  });
+  })
 
   return (
     <Select.Root className="relative z-100" collection={collection} {...props}>
@@ -61,5 +61,5 @@ export const LanguageSelector = (props: LanguageSelectorProps) => {
       </Select.Positioner>
       <Select.HiddenSelect />
     </Select.Root>
-  );
-};
+  )
+}

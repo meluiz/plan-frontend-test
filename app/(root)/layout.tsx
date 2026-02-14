@@ -1,15 +1,15 @@
-import { Suspense } from 'react';
+import { Suspense } from 'react'
 
-import Link from 'next/link';
+import Link from 'next/link'
 
-import { GrupoPlanMark, PlanMark } from '@/components/layout';
-import { exo, openSans } from '@/configs/fonts';
-import { Filters, FiltersFallback } from '@/modules/root';
+import { GrupoPlanMark, PlanMark } from '@/components/layout'
+import { exo, openSans } from '@/configs/fonts'
+import { Filters, FiltersFallback } from '@/modules/root'
 
-import './globals.css';
+import './globals.css'
 
 const Layout = (props: Layout.Props) => {
-  const { children } = props;
+  const { children } = props
 
   return (
     <html lang="pt-BR" className={`${exo.variable} ${openSans.variable}`}>
@@ -67,9 +67,9 @@ const Layout = (props: Layout.Props) => {
         </div>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout
 
-export { metadata, viewport } from '@/utils/constants';
+export { metadata, viewport } from '@/utils/constants'

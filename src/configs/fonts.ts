@@ -1,4 +1,4 @@
-import { Exo, Open_Sans } from 'next/font/google';
+import { Exo, Open_Sans } from 'next/font/google'
 
 export const exo = Exo({
   variable: '--font-exo',
@@ -23,7 +23,7 @@ export const exo = Exo({
     'Segoe UI Symbol',
     'Noto Color Emoji',
   ],
-});
+})
 
 export const openSans = Open_Sans({
   preload: true,
@@ -32,4 +32,4 @@ export const openSans = Open_Sans({
   variable: '--font-open-sans',
   weight: ['800'],
   fallback: ['var(--font-exo)'],
-});
+})

@@ -1,13 +1,13 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import type { Country } from '@/domains/countries';
+import type { Country } from '@/domains/countries'
 
 export type CountryFlagProps = {
-  country: Country;
-};
+  country: Country
+}
 
 export const CountryFlag = async (props: CountryFlagProps) => {
-  const { country } = props;
+  const { country } = props
 
   return (
     <div className="flex flex-col items-center gap-y-2.5 col-span-12 lg:col-span-3">
@@ -21,7 +21,9 @@ export const CountryFlag = async (props: CountryFlagProps) => {
           alt={country.flags.alt}
         />
       </div>
-      <p className="hidden lg:inline-block text-lg text-gray-dark font-bold">Bandeira</p>
+      <p className="hidden lg:inline-block text-lg text-gray-dark font-bold">
+        Bandeira
+      </p>
     </div>
-  );
-};
+  )
+}

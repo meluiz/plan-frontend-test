@@ -1,25 +1,27 @@
-import { StarIcon } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import slugify from 'slugify';
+import { StarIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import slugify from 'slugify'
 
-import { CountryCard } from '@/components/layout';
-import { Button } from '@/components/ui';
-import type { Country } from '@/domains/countries';
+import { CountryCard } from '@/components/layout'
+import { Button } from '@/components/ui'
+import type { Country } from '@/domains/countries'
 
 export type CountryListProps = {
-  collection: Country[];
-};
+  collection: Country[]
+}
 
 export const CountryList = async (props: CountryListProps) => {
-  const { collection } = props;
+  const { collection } = props
 
   if (collection.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center">
-        <p className="text-xl font-bold text-black/50">Nenhum país encontrado</p>
+        <p className="text-xl font-bold text-black/50">
+          Nenhum país encontrado
+        </p>
       </div>
-    );
+    )
   }
 
   return (
@@ -28,7 +30,7 @@ export const CountryList = async (props: CountryListProps) => {
         const key = slugify(country.name.common, {
           lower: true,
           strict: true,
-        });
+        })
 
         return (
           <CountryCard
@@ -63,14 +65,17 @@ export const CountryList = async (props: CountryListProps) => {
                 </div>
               </div>
               <Button.Root className="w-full">
-                <Link href={`/details/${encodeURIComponent(country.name.common)}`} prefetch>
+                <Link
+                  href={`/details/${encodeURIComponent(country.name.common)}`}
+                  prefetch
+                >
                   <Button.Label>Ver mais</Button.Label>
                 </Link>
               </Button.Root>
             </div>
           </CountryCard>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

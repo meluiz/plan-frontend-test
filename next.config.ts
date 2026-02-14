@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from 'next'
 
 export default {
   crossOrigin: 'anonymous',
@@ -11,4 +11,4 @@ export default {
       dynamic: 60,
     },
   },
-} as NextConfig;
+} as NextConfig

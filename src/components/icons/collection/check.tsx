@@ -1,4 +1,4 @@
-import { Icon, type IconProps } from '../icon';
+import { Icon, type IconProps } from '../icon'
 
 export const Check = (props: IconProps) => {
   return (
@@ -14,5 +14,5 @@ export const Check = (props: IconProps) => {
         />
       </g>
     </Icon>
-  );
-};
+  )
+}

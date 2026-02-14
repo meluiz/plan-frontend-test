@@ -1,4 +1,4 @@
-import { Icon, type IconProps } from '../icon';
+import { Icon, type IconProps } from '../icon'
 
 export const PasserLeft = (props: IconProps) => {
   return (
@@ -20,5 +20,5 @@ export const PasserLeft = (props: IconProps) => {
         stroke="currentColor"
       />
     </Icon>
-  );
-};
+  )
+}

@@ -1,25 +1,25 @@
-import { sentence, toCapitalCase } from 'melper/string';
+import { sentence, toCapitalCase } from 'melper/string'
 
-import type { Country } from '@/domains/countries';
+import type { Country } from '@/domains/countries'
 
-const NUMBER_FORMATTER = new Intl.NumberFormat('pt-BR');
+const NUMBER_FORMATTER = new Intl.NumberFormat('pt-BR')
 
 const formatCurrencies = (country: Country): string => {
   if (!country.currencies) {
-    return 'Sem moeda';
+    return 'Sem moeda'
   }
 
   const currencies = Object.values(country.currencies).map((currency) =>
     toCapitalCase(currency.name),
-  );
+  )
 
-  return sentence(currencies, { lastSeparator: ' e ' });
-};
+  return sentence(currencies, { lastSeparator: ' e ' })
+}
 
 const formatLanguages = (country: Country): string => {
-  const languages = Object.values(country.languages);
-  return sentence(languages, { lastSeparator: ' e ' });
-};
+  const languages = Object.values(country.languages)
+  return sentence(languages, { lastSeparator: ' e ' })
+}
 
 const getCountryInfo = (country: Country) => {
   return [
@@ -58,17 +58,17 @@ const getCountryInfo = (country: Country) => {
       label: 'Sub-Região:',
       value: country?.subregion,
     },
-  ];
-};
+  ]
+}
 
 export type CountryDetailsProps = {
-  country: Country;
-};
+  country: Country
+}
 
 export const CountryDetails = async (props: CountryDetailsProps) => {
-  const { country } = props;
+  const { country } = props
 
-  const countryInfo = getCountryInfo(country);
+  const countryInfo = getCountryInfo(country)
 
   return (
     <div className="grid grid-cols-12 col-span-12 lg:gap-y-4">
@@ -78,7 +78,10 @@ export const CountryDetails = async (props: CountryDetailsProps) => {
 
       <div className="w-full flex flex-col gap-y-2 col-span-12 relative isolate">
         {countryInfo.map((item) => (
-          <div key={item.id} className="grid grid-cols-12 items-baseline gap-x-4 lg:gap-x-5">
+          <div
+            key={item.id}
+            className="grid grid-cols-12 items-baseline gap-x-4 lg:gap-x-5"
+          >
             <div className="col-span-5 md:col-span-6 lg:col-span-4 text-base lg:text-2xl text-gray-light font-normal text-nowrap text-left md:text-right">
               {item.label}
             </div>
@@ -89,5 +92,5 @@ export const CountryDetails = async (props: CountryDetailsProps) => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}

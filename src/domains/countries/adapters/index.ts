@@ -1,1 +1,1 @@
-export * from './country.adapter';
+export * from './country.adapter'

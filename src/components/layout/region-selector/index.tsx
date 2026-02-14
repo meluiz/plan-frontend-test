@@ -1,12 +1,12 @@
-import { Checkbox, createListCollection } from '@ark-ui/react';
+import { Checkbox, createListCollection } from '@ark-ui/react'
 
-import { Check } from '@/components/icons';
+import { Check } from '@/components/icons'
 
 export type RegionSelectorProps = {
-  value?: string[] | undefined;
-  defaultValue?: string[] | undefined;
-  onValueChange?: ((value: string[]) => void) | undefined;
-};
+  value?: string[] | undefined
+  defaultValue?: string[] | undefined
+  onValueChange?: ((value: string[]) => void) | undefined
+}
 
 export const RegionSelector = (props: RegionSelectorProps) => {
   const collection = createListCollection({
@@ -17,7 +17,7 @@ export const RegionSelector = (props: RegionSelectorProps) => {
       { value: 'oceania', label: 'Oceânia' },
       { value: 'americas', label: 'Américas' },
     ],
-  });
+  })
 
   return (
     <Checkbox.Group
@@ -42,5 +42,5 @@ export const RegionSelector = (props: RegionSelectorProps) => {
         </Checkbox.Root>
       ))}
     </Checkbox.Group>
-  );
-};
+  )
+}

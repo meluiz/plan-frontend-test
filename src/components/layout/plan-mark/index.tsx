@@ -1,4 +1,4 @@
-export type PlanMarkProps = Omit<React.ComponentProps<'svg'>, 'children'>;
+export type PlanMarkProps = Omit<React.ComponentProps<'svg'>, 'children'>
 
 export const PlanMark = (props: PlanMarkProps) => {
   return (
@@ -132,5 +132,5 @@ export const PlanMark = (props: PlanMarkProps) => {
         d="M106.741 50.9426H107.39C107.542 50.9426 107.695 51.0179 107.809 51.0932C107.924 51.2061 108 51.3567 108 51.5073V57.0045H106.741V50.9426Z"
       />
     </svg>
-  );
-};
+  )
+}

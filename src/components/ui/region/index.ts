@@ -1,1 +1,1 @@
-export * as Region from './region';
+export * as Region from './region'

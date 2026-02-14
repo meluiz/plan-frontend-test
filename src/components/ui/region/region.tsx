@@ -1,10 +1,10 @@
-import { type HTMLArkProps, ark } from '@ark-ui/react';
+import { type HTMLArkProps, ark } from '@ark-ui/react'
 
 /* --------------------------------------------------------------------------------
  * Region - Africa
  * -------------------------------------------------------------------------------- */
 
-export type AfricaProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type AfricaProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const Africa = (props: AfricaProps) => {
   return (
@@ -30,14 +30,14 @@ export const Africa = (props: AfricaProps) => {
         fill="#9D9D9D"
       />
     </ark.svg>
-  );
-};
+  )
+}
 
 /* --------------------------------------------------------------------------------
  * Region - Asia
  * -------------------------------------------------------------------------------- */
 
-export type AsiaProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type AsiaProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const Asia = (props: AsiaProps) => {
   return (
@@ -711,14 +711,14 @@ export const Asia = (props: AsiaProps) => {
         d="M20.999 33.8255C20.999 33.8095 20.9827 33.8095 20.9827 33.7935C20.9827 33.7775 20.999 33.7616 21.0152 33.7775C21.0152 33.7775 21.0314 33.7935 21.0314 33.8095C21.0152 33.8255 20.999 33.8255 20.999 33.8255Z"
       />
     </ark.svg>
-  );
-};
+  )
+}
 
 /* --------------------------------------------------------------------------------
  * Region - Europe
  * -------------------------------------------------------------------------------- */
 
-export type EuropeProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type EuropeProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const Europe = (props: EuropeProps) => {
   return (
@@ -1044,14 +1044,14 @@ export const Europe = (props: EuropeProps) => {
         d="M15.2904 21.3495C15.2904 21.3166 15.2571 21.3002 15.2238 21.3002C15.1738 21.3002 15.1405 21.3166 15.1405 21.3659C15.1405 21.3988 15.1572 21.4317 15.2071 21.4317C15.2238 21.4481 15.2904 21.3824 15.2904 21.3495Z"
       />
     </ark.svg>
-  );
-};
+  )
+}
 
 /* --------------------------------------------------------------------------------
  * Region - Oceania
  * -------------------------------------------------------------------------------- */
 
-export type OceaniaProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type OceaniaProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const Oceania = (props: OceaniaProps) => {
   return (
@@ -1287,14 +1287,14 @@ export const Oceania = (props: OceaniaProps) => {
         d="M35.6834 10.449C35.6997 10.4653 35.7321 10.4977 35.7159 10.514C35.6997 10.5789 35.651 10.6114 35.586 10.5789C35.5698 10.5789 35.5536 10.5627 35.5698 10.5464C35.586 10.4652 35.6347 10.449 35.6834 10.449Z"
       />
     </ark.svg>
-  );
-};
+  )
+}
 
 /* --------------------------------------------------------------------------------
  * Region - NorthAmerica
  * -------------------------------------------------------------------------------- */
 
-export type NorthAmericaProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type NorthAmericaProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const NorthAmerica = (props: NorthAmericaProps) => {
   return (
@@ -1980,14 +1980,14 @@ export const NorthAmerica = (props: NorthAmericaProps) => {
         d="M22.1755 33.4904L22.1592 33.5066C22.1592 33.5229 22.1592 33.5391 22.1755 33.5553L22.1917 33.5391C22.1917 33.5066 22.1917 33.4904 22.1755 33.4904Z"
       />
     </ark.svg>
-  );
-};
+  )
+}
 
 /* --------------------------------------------------------------------------------
  * Region - SouthAmerica
  * -------------------------------------------------------------------------------- */
 
-export type SouthAmericaProps = Omit<HTMLArkProps<'svg'>, 'children'>;
+export type SouthAmericaProps = Omit<HTMLArkProps<'svg'>, 'children'>
 
 export const SouthAmerica = (props: SouthAmericaProps) => {
   return (
@@ -2013,5 +2013,5 @@ export const SouthAmerica = (props: SouthAmericaProps) => {
         d="M14.8053 36.6351C14.8864 36.7 15.0163 36.6838 15.0488 36.8299C15.0975 36.7974 15.1137 36.7812 15.1462 36.7487C15.2598 36.6513 15.2598 36.6513 15.1624 36.5377C15.1462 36.5215 15.1299 36.489 15.1299 36.4728C15.1137 36.4241 15.1299 36.3754 15.1786 36.3916C15.3572 36.4565 15.5358 36.4078 15.6981 36.3916C15.7631 36.3916 15.8118 36.3754 15.8605 36.3267C15.8767 36.3104 15.9092 36.2942 15.9416 36.2942C16.0877 36.3104 16.2176 36.3916 16.3475 36.4403C16.4286 36.4728 16.4124 36.6513 16.3475 36.7C16.2825 36.7487 16.2176 36.8137 16.1364 36.8299C16.0715 36.8461 16.0066 36.8461 16.0228 36.9435V36.9598C15.8929 36.9273 15.8767 37.1059 15.7631 37.1383C15.617 37.1708 15.617 37.1871 15.5358 37.0409C15.4546 36.8948 15.4384 36.8948 15.3085 36.9922C15.1299 37.1383 15.0812 37.1221 14.9351 36.9435C14.9027 36.8948 14.8702 36.8461 14.8377 36.7974C14.7728 36.765 14.7728 36.765 14.8053 36.6351Z"
       />
     </ark.svg>
-  );
-};
+  )
+}

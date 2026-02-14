@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const manifest = Object.freeze({
   name: 'Plan Countries - Marketing Digital',
@@ -14,7 +14,7 @@ export const manifest = Object.freeze({
       type: 'image/x-icon',
     },
   ],
-});
+})
 
 export const metadata = Object.freeze({
   title: {
@@ -48,7 +48,7 @@ export const metadata = Object.freeze({
     card: 'summary_large_image',
     site: 'https://countries.meluiz.com',
   },
-}) as unknown as Metadata;
+}) as unknown as Metadata
 
 export const viewport = Object.freeze({
   minimumScale: 1,
@@ -58,7 +58,7 @@ export const viewport = Object.freeze({
   viewportFit: 'cover',
   themeColor: '#09090B',
   colorScheme: 'dark light',
-});
+})
 
 export const robots = Object.freeze({
   host: 'https://countries.meluiz.com',
@@ -67,7 +67,7 @@ export const robots = Object.freeze({
     allow: '/',
     userAgent: '*',
   },
-});
+})
 
 export const sitemap = Object.freeze([
   {
@@ -76,4 +76,4 @@ export const sitemap = Object.freeze([
     changeFrequency: 'yearly',
     url: 'https://countries.meluiz.com',
   },
-]);
+])

@@ -1,23 +1,23 @@
-'use client';
+'use client'
 
-import { Field } from '@ark-ui/react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { Field } from '@ark-ui/react'
+import { usePathname, useSearchParams } from 'next/navigation'
 
-import { Search } from '@/components/icons';
-import { RegionSelector, LanguageSelector } from '@/components/layout';
+import { Search } from '@/components/icons'
+import { RegionSelector, LanguageSelector } from '@/components/layout'
 
-import { useFilters } from './hooks';
+import { useFilters } from './hooks'
 
 export type FiltersProps = {
-  searchParams: URLSearchParams;
-};
+  searchParams: URLSearchParams
+}
 
 const FiltersPure = (props: FiltersProps) => {
-  const pathname = usePathname();
-  const { filters, handleFilterChange } = useFilters(props);
+  const pathname = usePathname()
+  const { filters, handleFilterChange } = useFilters(props)
 
   if (!/^\/$/.test(pathname)) {
-    return null;
+    return null
   }
 
   return (
@@ -56,14 +56,14 @@ const FiltersPure = (props: FiltersProps) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const Filters = () => {
-  const searchParams = useSearchParams();
-  return <FiltersPure searchParams={searchParams} />;
-};
+  const searchParams = useSearchParams()
+  return <FiltersPure searchParams={searchParams} />
+}
 
 export const FiltersFallback = () => {
-  return <FiltersPure searchParams={new URLSearchParams()} />;
-};
+  return <FiltersPure searchParams={new URLSearchParams()} />
+}

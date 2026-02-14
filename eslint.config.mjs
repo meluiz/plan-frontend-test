@@ -1,15 +1,15 @@
-import js from '@eslint/js';
-import tseslint from '@typescript-eslint/eslint-plugin';
-import tsparser from '@typescript-eslint/parser';
-import { defineConfig, globalIgnores } from 'eslint/config';
-import nextWebVitals from 'eslint-config-next/core-web-vitals';
-import nextTypescript from 'eslint-config-next/typescript';
-import prettier from 'eslint-config-prettier/flat';
-import importPlugin from 'eslint-plugin-import';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import react from 'eslint-plugin-react';
-import reactHooks from 'eslint-plugin-react-hooks';
-import globals from 'globals';
+import js from '@eslint/js'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsparser from '@typescript-eslint/parser'
+import { defineConfig, globalIgnores } from 'eslint/config'
+import nextWebVitals from 'eslint-config-next/core-web-vitals'
+import nextTypescript from 'eslint-config-next/typescript'
+import prettier from 'eslint-config-prettier/flat'
+import importPlugin from 'eslint-plugin-import'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
+import react from 'eslint-plugin-react'
+import reactHooks from 'eslint-plugin-react-hooks'
+import globals from 'globals'
 
 const FILE_IGNORES = {
   ignores: [
@@ -20,7 +20,7 @@ const FILE_IGNORES = {
     '**/coverage/**',
     '**/*.mjs',
   ],
-};
+}
 
 const MAIN_CONFIG = {
   files: ['**/*.{js,mjs,cjs,jsx,ts,tsx}'],
@@ -97,7 +97,11 @@ const MAIN_CONFIG = {
     'import/order': [
       'error',
       {
-        groups: [['builtin', 'external'], 'internal', ['parent', 'sibling', 'index']],
+        groups: [
+          ['builtin', 'external'],
+          'internal',
+          ['parent', 'sibling', 'index'],
+        ],
         pathGroups: [
           {
             pattern: 'react',
@@ -129,7 +133,7 @@ const MAIN_CONFIG = {
       },
     ],
   },
-};
+}
 
 export default defineConfig([
   js.configs.recommended,
@@ -138,5 +142,12 @@ export default defineConfig([
   prettier,
   ...nextWebVitals,
   ...nextTypescript,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
-]);
+  globalIgnores([
+    'node_modules',
+    '.next/',
+    'public/',
+    '.vscode/',
+    '.prettierrc.js',
+    'eslint.config.mjs',
+  ]),
+])

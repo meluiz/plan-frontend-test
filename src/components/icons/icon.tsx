@@ -1,11 +1,11 @@
-import { ark, type HTMLArkProps } from '@ark-ui/react';
+import { ark, type HTMLArkProps } from '@ark-ui/react'
 
 export type IconProps = HTMLArkProps<'svg'> & {
-  size?: string | number;
-};
+  size?: string | number
+}
 
 export const Icon = (props: React.PropsWithChildren<IconProps>) => {
-  const { width = '1em', height = '1em', size, ...rest } = props;
+  const { width = '1em', height = '1em', size, ...rest } = props
 
   return (
     <ark.svg
@@ -16,5 +16,5 @@ export const Icon = (props: React.PropsWithChildren<IconProps>) => {
       role="img"
       {...rest}
     />
-  );
-};
+  )
+}
