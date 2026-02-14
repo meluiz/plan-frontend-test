@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+@import 'tailugin';
+
+@theme {
+  --font-sans: var(--font-exo), sans-serif;
+  --font-open-sans: var(--font-open-sans), sans-serif;
+
+  --color-accent: #f58220;
+  --color-gray-dark: #707070;
+  --color-gray-light: #9d9d9d;
+  --color-gray-header: #58595b;
+
+  --spacing-container: 81.25rem;
+}
+
+@layer base {
+  html {
+    hyphens: auto;
+    font-optical-sizing: auto;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    font-variant-numeric: tabular-nums slashed-zero;
+    font-feature-settings:
+      'tnum' 1,
+      'zero' 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
+    hanging-punctuation: first;
+  }
+}
