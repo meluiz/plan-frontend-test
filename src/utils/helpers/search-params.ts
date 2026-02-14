@@ -41,8 +41,10 @@ export const searchParams = {
     const searchParams = new URLSearchParams();
 
     for (const [key, value] of Object.entries(params)) {
-      if (value !== undefined) {
-        searchParams.append(key, value);
+      const next = Array.isArray(value) ? value.join(',') : value;
+
+      if (next) {
+        searchParams.append(key, next);
       }
     }
 
