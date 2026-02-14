@@ -19,10 +19,15 @@ export const CountryFlagSchema = z.object({
 
 export const CountryTranslationsSchema = z.record(z.string(), CountryNativeNameSchema);
 
+export const CountryCurrencySchema = z.object({ name: z.string(), symbol: z.string() });
+
 export const CountrySchema = z.object({
   name: CountryNameSchema,
   flags: CountryFlagSchema,
   region: z.string(),
+  subregion: z.string(),
+  population: z.number(),
+  currencies: z.record(z.string(), CountryCurrencySchema),
   capital: z.array(z.string()),
   languages: z.record(z.string(), z.string()),
   translations: CountryTranslationsSchema,
