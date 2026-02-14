@@ -78,7 +78,7 @@ export const CountryCard = (props: CountryCardProps) => {
 
   return (
     <div className="flex-1 flex flex-col relative isolate rounded-[1.25rem] bg-white shadow-[4px_0_10px_rgba(0,0,0,0.2)] overflow-hidden">
-      <div className="flex items-center justify-between bg-gray-header rounded-t-[1.25rem] py-1 pl-5 pr-4">
+      <div className="min-h-11 flex items-center justify-between bg-gray-header rounded-t-[1.25rem] py-1 pl-5 pr-4">
         <p className="text-base font-black italic text-white">{data?.name}</p>
         {data?.icon && (
           <div className="ml-auto relative shrink-0 grow-0 *:[svg]:h-9">{data.icon}</div>
