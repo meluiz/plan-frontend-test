@@ -26,7 +26,7 @@ const Page = async (props: Page.Props) => {
 
   return (
     <div className="w-full flex flex-col gap-y-13 relative isolate">
-      <CountryCard region={country.region} subregion={country.subregion}>
+      <CountryCard region={country.region} subregion={country?.subregion}>
         <div className="w-full min-h-content grid grid-cols-12 relative isolate gap-x-5">
           <CountryFlag country={country} />
           <div className="grid grid-cols-12 col-span-12 lg:col-span-9 gap-y-10 lg:gap-y-13.5">
