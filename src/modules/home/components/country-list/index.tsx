@@ -1,5 +1,6 @@
 import { StarIcon } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import slugify from 'slugify';
 
 import { CountryCard } from '@/components/layout';
@@ -22,8 +23,12 @@ export const CountryList = async (props: CountryListProps) => {
         });
 
         return (
-          <CountryCard key={`country:${key}`} region={country.region.toLowerCase()}>
-            <div className="flex flex-col gap-y-5.5">
+          <CountryCard
+            key={`country:${key}`}
+            region={country.region}
+            subregion={country.subregion}
+          >
+            <div className="flex flex-col gap-y-5.5 flex-1 justify-between">
               <div className="flex flex-col gap-y-2.5">
                 <div className="flex items-center justify-center">
                   <Image
@@ -50,7 +55,9 @@ export const CountryList = async (props: CountryListProps) => {
                 </div>
               </div>
               <Button.Root className="w-full">
-                <Button.Label>Ver mais</Button.Label>
+                <Link href={`/details/${encodeURIComponent(country.name.common)}`} prefetch>
+                  <Button.Label>Ver mais</Button.Label>
+                </Link>
               </Button.Root>
             </div>
           </CountryCard>
