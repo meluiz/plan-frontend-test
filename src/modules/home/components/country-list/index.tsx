@@ -14,6 +14,14 @@ export type CountryListProps = {
 export const CountryList = async (props: CountryListProps) => {
   const { collection } = props;
 
+  if (collection.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center">
+        <p className="text-xl font-bold text-black/50">Nenhum país encontrado</p>
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
       {collection.map((country) => {
@@ -42,7 +50,7 @@ export const CountryList = async (props: CountryListProps) => {
                 </div>
                 <div className="flex flex-col items-center justify-center gap-2">
                   <h2 className="text-xl font-bold text-gray-dark text-center">
-                    {country.name.common}
+                    {country.translations.por.common}
                   </h2>
                   <div className="flex items-center gap-x-2.5">
                     <div className="size-5 flex items-center justify-center rounded-full bg-accent text-white">
