@@ -36,8 +36,7 @@ export const CountryList = async (props: CountryListProps) => {
           <CountryCard
             key={`country:${key}`}
             region={country.region}
-            subregion={country.subregion}
-          >
+            subregion={country.subregion}>
             <div className="flex flex-col gap-y-5.5 flex-1 justify-between">
               <div className="flex flex-col gap-y-2.5">
                 <div className="flex items-center justify-center">
@@ -64,11 +63,10 @@ export const CountryList = async (props: CountryListProps) => {
                   </div>
                 </div>
               </div>
-              <Button.Root className="w-full">
+              <Button.Root className="w-full" asChild>
                 <Link
                   href={`/details/${encodeURIComponent(country.name.common)}`}
-                  prefetch
-                >
+                  prefetch>
                   <Button.Label>Ver mais</Button.Label>
                 </Link>
               </Button.Root>
